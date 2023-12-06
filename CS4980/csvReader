@@ -1,0 +1,33 @@
+import csv
+
+# Specify the path to your CSV file
+editedCSV = 'blackjackEditedData01.csv'
+unEditedCSV = 'blackjackdataUnedited.csv'
+
+# Create an empty list to store the values in the column
+edited_data1 = []
+control_data2 = []
+
+# Open the CSV file
+with open(editedCSV, 'r') as file:
+    # Create a CSV reader object
+    csv_reader = csv.DictReader(file)
+    
+    # Loop through each row in the CSV file
+    for row in csv_reader:
+        # Access the value in the "ColumnName" column and append it to the list
+        tempData = float(row['result'])
+        edited_data1.append(tempData)
+with open(unEditedCSV, 'r') as file:
+    # Create a CSV reader object
+    csv_reader = csv.DictReader(file)
+    
+    # Loop through each row in the CSV file
+    for row in csv_reader:
+        # Access the value in the "ColumnName" column and append it to the list
+        tempData = float(row['result'])
+        control_data2.append(tempData)
+print ("Sum of wins with probability:")
+print(sum(edited_data1))
+print ("sum of wins without probability:")
+print(sum(control_data2))
