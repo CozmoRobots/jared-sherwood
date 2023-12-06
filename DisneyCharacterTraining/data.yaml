@@ -1,0 +1,7 @@
+path:
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 8
+names: ["ScoobyDoo","MickeyMouse","Bert","Ernie", "Rosita", "Perdita", "BBear","BFox"]
